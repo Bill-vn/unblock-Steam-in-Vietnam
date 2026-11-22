@@ -3,6 +3,13 @@
 Chỉ đẩy **lưu lượng TCP của Steam** qua tunnel Cloudflare WARP (miễn phí).
 Toàn bộ HTTPS khác (Chrome, Zalo, ...) và **toàn bộ UDP (CS2)** đi thẳng ra Internet.
 
+# Lưu ý trước khi dùng
+
+- **Đừng bật VPN khác** (WARP app, Tailscale, Radmin) cùng lúc — `strict_route` sẽ xung đột.
+- **Đừng mua game khi tunnel đang bật**: Steam có thể thấy IP Cloudflare → sai region.
+- WARP endpoint `188.114.96.1` đang ổn định; nếu chết, thử `188.114.97.1`, `188.114.98.1`, `188.114.99.1`.
+- Config pin sing-box **1.10.7**; nâng lên 1.11+ phải đổi schema (wireguard → endpoints, sniff → action).
+
 ## Nó làm gì
 
 | Luồng | Đường đi |
